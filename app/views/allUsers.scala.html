@@ -1,0 +1,126 @@
+@(userForm: List[User])
+
+@main("My  AllUsers"){
+
+    @userForm.map { user =>
+
+            <table style="width: 600px;border: 1px solid seagreen;">
+                <tr style="height: 50px; border: 1px solid royalblue;">
+                    <td>用户名：</td>
+                    <td>@user.name</td>
+                    <td>用户密码：</td>
+                    <td><input size="10" value="@user.password" >
+                        <button value="@user.name" onclick="deleteUser(this.value);">删除</button>
+						<button value="@user.name" onclick="updateUser(this.value);">修改</button>
+					</td>
+                </tr>
+            </table>
+    }
+    用户名：<input id="name" type="text" onkeyup="check(this.value);"><span id="mesg"></span>
+    密码：  <input id="password" type="password" >
+    <!--<br/>Message：<span id="messg"></span>-->
+    <button onclick="addUser();">添加</button><br/><br/>
+	请输入修改后的密码：<input id="updatepassword" type="password">
+	请确认密码：<input id="updatepassword2" type="password">
+
+    <script type="text/javascript">
+        function addUser(){
+            var xmlhttp = createXMLHttpReq();
+            var name = document.getElementById('name').value
+            var password = document.getElementById('password').value
+            var user = {"user":{name    : name, password: password}};
+            if(name.length < 4 || password.length < 4){
+                alert("请核对用户名或密码长度！最少4位！");
+            }else{
+                xmlhttp.onreadystatechange = function (){
+                //alert(name+"pass: "+ password +" status: "+ xmlhttp.status)
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        //alert("xmlhttp.responseText: "+xmlhttp.responseText);
+                        //document.getElementById("messg" ).innerHTML = xmlhttp.responseText;
+                    }
+                }
+                var url = "http://localhost:9000/Users";
+                xmlhttp.open("post", url, true);
+                xmlhttp.setRequestHeader("Content-Type","application/json");
+                //alert(JSON.stringify(user));
+                xmlhttp.send(JSON.stringify(user));
+            }
+            window.setTimeout("window.location.reload()",800);
+        }
+
+		function updateUser(username){
+            var xmlhttp = createXMLHttpReq();
+            var password1 = document.getElementById("updatepassword").value
+            var password2 = document.getElementById("updatepassword2").value
+			//alert("password1 :"+ password1 +" password2: "+password2);
+            //var user = {"user":{name    : name, password: password}};
+			var userPassword = {"password":password1};
+            if(password1.length < 4){
+                alert("请核对密码长度！最少4位！");
+            }else if(password1 == password2){
+                xmlhttp.onreadystatechange = function (){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        //alert("xmlhttp.responseText: "+xmlhttp.responseText);
+                    }
+                }
+                var url = "http://localhost:9000/Users/" + username;
+				//alert("URL:"+ url+" ||username:" + username);
+                xmlhttp.open("PUT", url, true);
+                xmlhttp.setRequestHeader("Content-Type","application/json");
+                //alert(JSON.stringify(userPassword));
+                xmlhttp.send(JSON.stringify(userPassword));
+                window.setTimeout("window.location.reload()",800);
+			}else{
+				alert("请确认两次密码是否一致！");
+            }
+        }
+
+        function createXMLHttpReq(){
+            if(window.XMLHttpRequest){
+                return new XMLHttpRequest();
+            }else if(window.ActiveXObject){
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }else{
+                document.write("您的浏览器不支持Ajax");
+            }
+        }
+        function check(str){
+            if(str.length != 0){
+                var xmlhttp = createXMLHttpReq();
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        document.getElementById("mesg" ).innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("get","http://localhost:9000/test?a="+ str, true);
+                xmlhttp.send();
+            }
+        }
+
+        function deleteUser(str){
+            //alert(str);
+            if(str.length == 0){
+                document.getElementById("msg").innerHTML="";
+            }else{
+                var xmlhttp = createXMLHttpReq();
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4){
+                        console.log(xmlhttp.status);
+                    if(xmlhttp.status == 200 || xmlhttp.status == 0){
+                        //document.getElementById("msg").innerHTML= xmlhttp.responseText;
+                        console.log("responseText" + xmlhttp.responseText);
+                    }
+                    }else{
+                        //document.getElementById("msg").innerHTML= "已经启动open(), 尚未send()";
+                    }
+                }
+                var url = "http://localhost:9000/Users/"+str;
+                xmlhttp.open("DELETE",url,true);
+                xmlhttp.send();
+                //document.getElementById("msg" ).innerHTML = xmlhttp.responseText;
+            }
+            window.setTimeout("location.reload()",420);
+        }
+    </script>
+}
+

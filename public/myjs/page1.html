@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Example html page</title>
+		<!--		延迟加载
+		<script type="text/javascript" defer="defer" src="exampel2.js"></script>-->
+	</head>
+	<body>
+		<h1></h1>
+		<input type="button" onclick="return test()" value="demo test">
+
+		<script type="text/javascript" >
+			function test () {
+				var msg  ;
+				var car = null;
+				//alert("hello wold :" + msg);
+				//alert(msg == undefined)
+				//alert(typeof (car))
+				//alert(NaN == NaN)
+				//alert(isNaN("wang")) // 任何不能被转换为数字的值都返回true
+				//alert( typeof (msg)) string
+				//alert(typeof 120) number
+				var num1 = parseInt("1235blue"); // 1235
+				var num2 = parseInt("10", 2); //2 二进制解析
+				var num3 = parseInt("10", 8); //8 八进制解析
+				var num4 = 10;
+
+				alert(num4.toString(8));  // 按八进制转换为字符串
+				alert(String(num4)) //10
+			}
+			//test();
+			//alert(msg);
+
+			//去掉首尾空格函数
+			function trim(str){
+			  while(str.substring(0,1)==" "){
+			   str=str.substring(1);
+			  }
+			  while(str.substring(str.length-1)==" "){
+			  str=str.substring(0,str.length-1);
+			  }
+			  return str;
+			}
+		// 转换 <  > \         // success
+		function  htmlEscape (text) {
+			return text.replace(/[<>"&]/g , function(match , pos , originalText ){
+				switch (match) {
+				case "<":
+					return "&lt;";
+				case ">":
+					return "&gt;";
+				case "\"":
+					return "&quot;";
+				}
+			});
+		}
+
+		</script>
+	</body>
+</html>

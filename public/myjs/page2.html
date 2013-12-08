@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Ajax实例</title>
+<script language="javascript" type="text/javascript">
+   <!--
+     var xmlHttp;
+   function createXMLHttpRequest()
+   {
+
+    if(window.ActiveXObject)
+    {
+      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+    }
+    else if(window.XMLHttpRequest)
+    {
+      xmlHttp=new XMLHttpRequest();
+    }
+    else
+    {
+      document.write("你的浏览器不支持ajax");
+    }
+
+   }
+
+   function httpStateChange()
+   {
+    if(xmlHttp.status==200||xmlHttp.status==0)
+    {
+      var node=document.getElementById("myDiv");
+    node.firstChild.nodeValue=xmlHttp.responseText;
+    }
+    else
+    {
+      window.alert("异步调用出错\n返回的http状态码为："+xmlHttp.status+"\n返回的http状态值为："+xmlHttp.statusText);
+    }
+   }
+
+   function getData()
+   {
+
+    createXMLHttpRequest();
+    if(xmlHttp!=null)
+    {
+      xmlHttp.open("open","ajax.txt",true);
+    xmlHttp.onreadystatechange=httpStateChange;
+    xmlHttp.send(null);
+    }
+
+   }
+   -->
+</script>
+
+</head>
+<body>
+    <div id="myDiv">原数据</div>
+<input type="button" value="更新数据" onclick="getData()" />
+</body>
+</html>

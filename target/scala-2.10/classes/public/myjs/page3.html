@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>二级联动菜单</title>
+<script language="javascript" type="text/javascript">
+   <!--
+     function setSection(selectIndex)
+   {
+
+    selectIndex++;
+    window.frames[0].location.href="cc"+selectIndex+".html";
+   }
+   -->
+</script>
+</head>
+<body>
+    <form name="myForm">
+   <select name="chapter" onchange="setSection(this.selectedIndex)">
+		<option>第一章：JavaScript基础</option>
+		<option>第二章：常量、变量和表达式</option>
+		<option>第三章：运算符</option>
+   </select>
+   <br />
+   <br />
+   <iframe name="myFrame" src="cc.html" scrolling="0" frameborder="0" height="250" width="220"></iframe>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Hello wo shi wangyazhen!!!
+This is a Ajax Demo!
+
+    function trim(str){
+      while(str.substring(0,1)==" "){
+       str=str.substring(1);
+      }
+      while(str.substring(str.length-1)==" "){
+      str=str.substring(0,str.length-1);
+      }
+      return str;
+    }

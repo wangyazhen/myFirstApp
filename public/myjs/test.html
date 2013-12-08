@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta name="keywords" content="关键字" />
+<meta name="description" content="简介" />
+<title>玉灵 QQ:6774011 7031633 Email:webrx@126.com webrx@163.com</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<input type="button" value="check me" onclick="alert(event.target)" />
+<div id="myDiv" onclick="cc();"> 这里是我的div</div>
+<script type="text/javascript">
+window.onbeforeunload=function(e){
+  var msg='您网页上有东西未保存';
+  e=e||window.event;
+  e.returnValue=msg;
+ return msg;
+}
+function cc () {
+	var EventUtil = new Object();
+	var div = document.getElementById("myDiv");
+	EventUtil.addHandler(div,"click",function(event){
+		event = EventUtil.getEvent(event);
+		alert("Screen coordinates: " + event.screenX + "," + event.screenY);
+	});
+}
+
+
+window.onkeydown = function(e){
+	e = e || window.event;
+	if(e.keyCode == 17){
+		alert("您按下了ctrl键")
+	}
+};
+</script>
+</body>
+</html>

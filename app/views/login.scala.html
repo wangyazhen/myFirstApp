@@ -1,0 +1,23 @@
+@(loginForm: Form[(String, String)])
+@import helper._
+<html>
+    <head>
+        <title>my login page</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+    </head>
+    <body>
+
+@main("My Test authenticate"){
+    @form(routes.Application.authenticate) {
+        <h2>This is a login page</h2>
+        用户名：@inputText(loginForm("name"))
+        密  码：@inputPassword(loginForm("password"))
+        @loginForm.errors.map{ error => @error.message}
+        <p>
+            <button type="submit" id="loginbutton">Login</button>
+        </p>
+    }
+ }
+    </body>
+</html>

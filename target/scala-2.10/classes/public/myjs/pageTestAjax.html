@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>ajax 测试</title>
+
+</head>
+<body>
+<button id="btn" onclick="abc();">按钮</button>
+<div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr"> </div>
+<a href="#" onclick="alert('瓦格纳亚振');">点击效果a</a>
+<script type="text/javascript">
+	function abc () {
+		var div = document.getElementById("myDiv");
+		alert("abc||"+div.getAttribute("id"));
+		alert("abc()" + div.getAttribute("class"));
+		div.setAttribute("title", "WangYz");
+		alert(div.getAttribute("title"));
+		//alert(document.doctype.name); // html
+	}
+   // 关闭之前提升框
+	window.onbeforeunload = function(e){
+		var msg = "您的网页上有东西未保存"
+		e = e || window.event;
+		e.returnValue = msg;
+		return msg;
+	};
+</script>
+</body>
+</html>

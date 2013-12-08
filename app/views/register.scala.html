@@ -1,0 +1,61 @@
+@(userForm: Form[User])
+@import helper._
+
+@main("My Test doregister"){
+	@form(routes.Application.doRegister) {
+	    请输入用户名
+        @inputText(userForm("name"))
+		请输入密码
+		@inputPassword(userForm("password.main"))
+		请确认密码
+	    @inputPassword(userForm("password.confirm"))
+
+        @userForm.errors.map { error =>
+             @error.message
+        }
+        <br/>
+        <input type="submit" value="DoRegister">
+    }
+    <script type="text/javascript">
+
+    function loadMsg(str){
+        var xmlhttp ;
+        if(str.length == 0){
+        document.getElementById("msg").innerHTML="0"
+        }else{
+        if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }else{
+        document.write("您的浏览器不支持Ajax");
+        }
+        xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState == 4){
+        console.log(xmlhttp.status);
+        if(xmlhttp.status == 200 || xmlhttp.status == 0){
+        document.getElementById("msg").innerHTML= xmlhttp.responseText;
+        console.log("responseText" + xmlhttp.responseText);
+        }
+        }else{
+        document.getElementById("msg").innerHTML= "已经启动open(), 尚未send()";
+        }
+        }
+        var url = "http://localhost:9000/test";
+        url = addURLParam(url,"a", str);
+        console.log("request: " + url);
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send(null);
+        }
+    }
+
+    // 封装的请求方法
+    function addURLParam (url, name, value) {
+    url += (url.indexOf("?") == -1 ? "?" : "&");
+    url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    return url;
+    }
+
+    </script>
+}
+

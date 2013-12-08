@@ -1,0 +1,6 @@
+Javascript 有11 种内置对象：
+Array、String、Date、Math、Boolean、Number、
+Function、Global、Error、RegExp、Object。
+
+在java 中 if语句执行完之后 变量就自动销毁 
+而在javascript中 if for 语句执行完 变量就添加到当前的执行环境 还可以访问

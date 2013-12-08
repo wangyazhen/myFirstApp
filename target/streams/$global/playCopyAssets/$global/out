@@ -1,0 +1,18 @@
+[0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\images\img.jpg,E:\workspace\myFirstApp\target\scala-2.10\classes\public\images\img.jpg)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\javascripts\backbone-min.js,E:\workspace\myFirstApp\target\scala-2.10\classes\public\javascripts\backbone-min.js)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\javascripts\jquery-1.9.0.min.js,E:\workspace\myFirstApp\target\scala-2.10\classes\public\javascripts\jquery-1.9.0.min.js)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\javascripts\underscore-min.js,E:\workspace\myFirstApp\target\scala-2.10\classes\public\javascripts\underscore-min.js)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\ajax.txt,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\ajax.txt)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\ajax笔记.txt,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\ajax笔记.txt)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\chromeDeBug.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\chromeDeBug.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\js学习.txt,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\js学习.txt)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\page1.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\page1.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\page2.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\page2.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\page3.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\page3.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\pageAjax.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\pageAjax.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\pageTestAjax.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\pageTestAjax.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\select.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\select.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\test.html,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\test.html)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\myjs\js\hello2.js,E:\workspace\myFirstApp\target\scala-2.10\classes\public\myjs\js\hello2.js)[0m
+[0m[[0mdebug[0m] [0m	(E:\workspace\myFirstApp\public\stylesheets\main.css,E:\workspace\myFirstApp\target\scala-2.10\classes\public\stylesheets\main.css)[0m
